@@ -3,10 +3,8 @@ services:
     image: vimagick/tinyproxy:latest
     container_name: tinyproxy
     ports:
-      - "127.0.0.1:8888:8888"
+      - "${HOST_IP}:8888:8888"
     environment:
-      - BASIC_AUTH_USER=${PROXY_USER:-admin}
-      - BASIC_AUTH_PASSWORD=${PROXY_PASS}
       - DNS_SERVERS=${DNS_SERVERS}
       - PROXY_USER=${PROXY_USER}
       - PROXY_PASSWORD=${PROXY_PASSWORD}
