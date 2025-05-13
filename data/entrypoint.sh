@@ -14,12 +14,12 @@ echo "Настроены следующие DNS-серверы:"
 cat /etc/resolv.conf
 
 # Генерация tinyproxy.conf
-echo "Port 8888" > /etc/tinyproxy/tinyproxy.conf
+echo "Port 8888" > /tmp/tinyproxy.conf
 
 # Добавление логина и пароля, если заданы переменные окружения
 if [ -n "$PROXY_USER" ] && [ -n "$PROXY_PASSWORD" ]; then
-    echo "BasicAuth $PROXY_USER $PROXY_PASSWORD" >> /etc/tinyproxy/tinyproxy.conf
+    echo "BasicAuth $PROXY_USER $PROXY_PASSWORD" >> /tmp/tinyproxy.conf
 fi
 
 # Запуск tinyproxy
-exec tinyproxy -d -c /etc/tinyproxy/tinyproxy.conf
+exec tinyproxy -d -c /tmp/tinyproxy.conf
