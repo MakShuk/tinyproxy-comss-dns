@@ -7,9 +7,9 @@ services:
     environment:
       - BASIC_AUTH_USER=${PROXY_USER:-admin}
       - BASIC_AUTH_PASSWORD=${PROXY_PASS}
-      - DNS_SERVERS=${DNS_SERVERS:-83.220.169.155,212.109.195.93}
+      - DNS_SERVERS=${DNS_SERVERS}
+      - PROXY_USER=${PROXY_USER}
+      - PROXY_PASSWORD=${PROXY_PASSWORD}
     volumes:
       - ./data:/etc/tinyproxy
     entrypoint: ["/bin/sh", "/etc/tinyproxy/entrypoint.sh"]
-
-  
