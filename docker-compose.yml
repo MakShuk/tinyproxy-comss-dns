@@ -11,10 +11,5 @@ services:
     volumes:
       - ./data:/etc/tinyproxy
     entrypoint: ["/bin/sh", "/etc/tinyproxy/entrypoint.sh"]
-    secrets:
-      - proxy_password
 
-secrets:
-  proxy_password:
-    file: ./secrets/proxy_password.txt
   
