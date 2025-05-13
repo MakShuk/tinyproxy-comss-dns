@@ -1,44 +1,57 @@
-# DNS Project
-
-A brief description of what this project does. (e.g., *DNS Project - A custom DNS resolver setup using Docker.*)
-
-Project Status: In Development (Example)
-
 <p align="right">
   <a href="README.ru.md"><img src="https://img.shields.io/badge/Русский-red?style=for-the-badge&logo=github" alt="Русский"></a>
 </p>
 
+# DNS Service
+
+A simple Docker-based service for DNS configuration and management.
+
 ![License](https://img.shields.io/badge/license-MIT-blue)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 ## Table of Contents
-- [Project Description](#project-description)
+
+- [Description](#description)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
-## Project Description
-Explain what the project is for, what problems it solves, and its main features.
-This project provides a configurable DNS resolver environment using Docker, potentially with Tinyproxy for HTTP/HTTPS proxying.
+## Description
+
+DNS Service provides an easy way to manage DNS settings using Docker containers. It is designed for quick deployment and configuration in development or testing environments.
+
+![Example Interface](screenshot.png)
 
 ## Requirements
-- Docker
-- Docker Compose
+
+- Docker 20.10+
+- docker-compose 1.29+
+- Bash
 
 ## Installation
-Step-by-step instructions with commands:
+
+Clone the repository and install dependencies:
+
 ```bash
-git clone https://github.com/your-username/your-project-name.git
-cd your-project-name
-docker-compose up -d
+git clone https://github.com/your-username/dns-service.git
+cd dns-service
 ```
 
 ## Usage
-Basic usage examples. For applications, commands or interface screenshots.
 
-To use the DNS resolver, configure your system or application to use the IP address of the Docker host on port 53 (or the port mapped in `docker-compose.yml`).
+Start the service using docker-compose:
 
-If Tinyproxy is used, configure your browser or system to use the proxy on the port specified in `data/tinyproxy.conf` (e.g., 8888).
+```bash
+docker-compose up -d
+```
+
+Check logs:
+
+```bash
+docker-compose logs
+```
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+
+This project is licensed under the [MIT](LICENSE) license.
