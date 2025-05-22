@@ -1,13 +1,15 @@
 services:
   tinyproxy:
-    image: vimagick/tinyproxy:latest
+    image: kalaksi/tinyproxy
     container_name: tinyproxy
     ports:
       - "${HOST_IP}:8888:8888"
+    dns:
+      - "83.220.169.155"
+      - "212.109.195.93"
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      - DNS_SERVERS=${DNS_SERVERS}
       - PROXY_USER=${PROXY_USER}
       - PROXY_PASSWORD=${PROXY_PASSWORD}
-    volumes:
-      - ./data:/etc/tinyproxy
-    entrypoint: ["/bin/sh", "/etc/tinyproxy/entrypoint.sh"]
